@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Günün Sağlık Bilgisi</title>
+<meta name="description" content="Günün Sağlık Bilgisi afiş ve video arşivi.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Günün Sağlık Bilgisi">
+<meta property="og:title" content="Günün Sağlık Bilgisi · Afiş ve video arşivi">
+<meta property="og:description" content="Her gün yeni bir sağlık bilgisi. Kısa, anlaşılır, eczacınızdan.">
+<meta property="og:url" content="https://saglikbilgisi.github.io/">
+<meta property="og:image" content="https://saglikbilgisi.github.io/og.jpg?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#13265a">
+<style>
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#13265a;color:#fff;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;text-align:center;padding:0 16px}
+.k{font-weight:800;letter-spacing:.08em}.k b{color:#ffc928}
+a{display:inline-block;margin-top:18px;background:#ffc928;color:#13265a;font-weight:800;padding:14px 22px;border-radius:14px;text-decoration:none}
+p{color:#c9d6f0}
+</style>
+<script>
+// Hangi gün açıldı: #g2026-11-11 ya da /g/2026-11-11
+var ARSIV="https://claude.ai/artifact/1nBiKfLmZCJ2h6hFXCnw5k";
+var m=location.hash.match(/^#g(\d{4}-\d{2}-\d{2})$/)||location.pathname.match(/^\/g\/(\d{4}-\d{2}-\d{2})\/?$/);
+var GUN=m?m[1]:"";
+var HEDEF=ARSIV+(GUN?"#g"+GUN:"");
+// Sayaç her günü ayrı sayfa olarak saysın
+try{ if(GUN && location.pathname!=="/g/"+GUN) history.replaceState(null,"","/g/"+GUN); }catch(e){}
+var gitti=false;
+function git(){ if(gitti) return; gitti=true; location.replace(HEDEF); }
+addEventListener("load",function(){ setTimeout(git,900); });
+setTimeout(git,3500);
+</script>
+</head>
+<body>
+<main>
+<div class="k">GÜNÜN <b>SAĞLIK</b> BİLGİSİ</div>
+<p>Arşiv açılıyor…</p>
+<a id="git" href="https://claude.ai/artifact/1nBiKfLmZCJ2h6hFXCnw5k">Arşivi aç</a>
+</main>
+<script>document.getElementById("git").href=HEDEF;</script>
+<!-- Cloudflare Web Analytics (çerezsiz) --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6d5708cfb5e24c8bb0e2aaab519355ac"}'></script>
+</body>
+</html>
