@@ -11,5 +11,13 @@ a{color:#ffc928;font-weight:800}p{color:#c9d6f0;font-size:13px;text-align:center
 <h1>Alerji İlaçları ve Uyku</h1><video src="2026-11-04.mp4" controls playsinline preload="metadata"></video>
 <a href="https://claude.ai/artifact/1nBiKfLmZCJ2h6hFXCnw5k">Bütün afiş ve videolar</a>
 <p>Bilgilendirme amaçlıdır. Tanı ve tedavi için hekiminize, ilaçlarınızla ilgili sorularınız için eczacınıza danışın.</p>
+<script>
+// Video yeni sekmede açıldığı için geride sayfa yok; telefonun geri tuşu sekmeyi kapatıyordu.
+// İlk dokunuşta geçmişe bir adım eklenir: geri tuşu önce ana sayfaya döner.
+(function(){var ANA="https://claude.ai/artifact/1nBiKfLmZCJ2h6hFXCnw5k",kondu=false;
+function koy(){if(kondu)return;kondu=true;try{history.pushState({izle:1},"")}catch(e){}}
+["click","play","keydown","touchend"].forEach(function(t){document.addEventListener(t,koy,{capture:true})});
+window.addEventListener("popstate",function(){location.replace(ANA)});})();
+</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6d5708cfb5e24c8bb0e2aaab519355ac"}'></script>
 </body></html>
